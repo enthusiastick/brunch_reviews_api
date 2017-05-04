@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   before_save :downcase_email
 
+  has_many :venues, foreign_key: :creator_id
+
   has_secure_password
 
   validates_format_of :email, with: EMAIL_REGEXP
