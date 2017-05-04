@@ -9,6 +9,14 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <%= link_to "Sign Out", sign_out_path, method: :delete %>
+    <% end %>
+    <% flash.each do |name, msg| %>
+      <div class="<%= name %>">
+        <%= content_tag :span, msg %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

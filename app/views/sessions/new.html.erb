@@ -1,0 +1,17 @@
+<div>
+  <%= form_for :session, url: sign_in_path do |f| %>
+    <div class="form-inputs">
+      <fieldset>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </fieldset>
+      <fieldset>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </fieldset>
+    </div>
+    <div class="form-actions">
+      <%= f.submit "Sign In" %>
+    </div>
+  <% end %>
+</div>
